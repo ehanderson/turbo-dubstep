@@ -19,13 +19,7 @@ display.show_question(card)
 user_answer = display.user_answer
 outcome = card.is_correct?(user_answer)
 display.result(outcome)
-
-puts deck.do_something_with_this_card
-
-
-
-
-
+deck.do_something_with_this_card(card)
 
 
 
