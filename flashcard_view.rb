@@ -7,7 +7,7 @@ class FlashcardView
   end
 
   def user_answer
-    guess = gets.chomp
+    gets
   end
 
   def correct_guess

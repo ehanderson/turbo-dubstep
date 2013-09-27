@@ -11,9 +11,9 @@ class FlashcardController
 
 
 
-  # def true_or_false
-  #   guess == answer ? true : false
-  # end
+  def true_or_false
+    comp_answer == user_answer
+  end
 
 #   def determine correct?
 # =>   return true if answer == user_answer
@@ -36,8 +36,11 @@ game = FlashcardController.new
 
 card = game.stack.serve
 game.view.show_question(card)
-game.view.user_answer
-
+user_answer = game.view.user_answer
+comp_answer = card.answer
+# puts comp_answer
+# puts user_answer
+puts comp_answer == user_answer
 
 
 
