@@ -20,7 +20,7 @@ require_relative 'flashcard_view.rb'
 # end
 
 flashcard_stack = Stack.new
-flashcard_view = Flashcardview.new(flashcard_stack.flashcards[0])
+flashcard_view = FlashcardView.new(flashcard_stack.flashcards[0])
 
 flashcard_view.show_question
 flashcard_view.take_answer
