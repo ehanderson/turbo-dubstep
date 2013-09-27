@@ -40,6 +40,11 @@ class Flashcard
     @answer = answer
     @question = question
   end
+
+  def is_correct?(guess)
+    answer == guess
+  end
+
 end
 
 
