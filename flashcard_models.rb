@@ -3,9 +3,10 @@ require 'pry'
 
 
 class Stack
-  attr_reader :flashcards
+  attr_reader :flashcards, :completed_card
   def initialize
     @flashcards = []
+    @completed_card = []
     add_cards
   end
 
@@ -27,6 +28,16 @@ class Stack
   
   def shuffle!
     @flashcards = flashcards.shuffle
+  end
+
+  def do_something_with_this_card(card)
+    if card.correct
+      @completed_card << card
+    elsif card.correct == false
+      put_on_bottom(card)
+    else 
+      raise "How did this get here?"
+    end
   end
 
   def put_on_bottom(flashcard)
@@ -64,3 +75,14 @@ stack = Stack.new
 # card = Flashcard.new("yes?", "no")
 # card.is_correct?("nope")
 # puts card.correct
+# card = Flashcard.new("cat","dog")
+# card2 = Flashcard.new("cat","cat")
+# bad_card = Flashcard.new("moose","cars")
+# card.is_correct?("dog")
+# stack.do_something_with_this_card(card)
+# puts stack.completed_card[0].answer
+# card2.is_correct?("dog")
+# stack.do_something_with_this_card(card2)
+# puts stack.flashcards[-1].answer
+# stack.do_something_with_this_card(bad_card)
+
