@@ -1,10 +1,9 @@
 #Initialize View class
 
 class FlashcardView
-  attr_reader :question, :answer, :guess
-  def initialize(card)
-    @question = card.question
-    @answer = card.answer
+  attr_reader :stack
+  def initialize(stack)
+    @stack = stack
   end
 
   def show_question

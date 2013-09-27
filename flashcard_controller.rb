@@ -2,20 +2,16 @@
 require_relative 'flashcard_models.rb'
 require_relative 'flashcard_view.rb'
 
-# class FlashcardController
-#   def initialize
+class FlashcardController
+  attr_reader :stack, :view
+  def initialize
+    @stack = Stack.new
+    @view = FlashcardView.new(stack)
+  end
 
-#   end
-
-#   def get_stack_from_model
-#     #Request stack instance from Model
-#     flashcard_stack = Stack.new
-#     return flashcard_stack
-#   end
-
-def true_or_false
-    answer == guess ? true : false
-end
+  # def true_or_false
+  #   answer == guess ? true : false
+  # end
 
 #   def determine correct?
 # =>   return true if answer == user_answer
@@ -32,11 +28,13 @@ end
 #
 #  end
 
-# end
+end
 
-flashcard_stack = Stack.new
-flashcard_view = FlashcardView.new(flashcard_stack.flashcards[0])
+game = FlashcardController.new
+
+p game
 
 
-flashcard_view.correct_guess
-flashcard_view.incorrect_guess
+
+# flashcard_view.correct_guess
+# flashcard_view.incorrect_guess
