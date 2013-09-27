@@ -6,8 +6,10 @@ class FlashcardController
   attr_reader :stack, :view
   def initialize
     @stack = Stack.new
-    @view = FlashcardView.new(stack)
+    @view = FlashcardView.new
   end
+
+
 
   # def true_or_false
   #   answer == guess ? true : false
@@ -32,7 +34,8 @@ end
 
 game = FlashcardController.new
 
-p game
+# game.stack.serve
+
 
 
 
