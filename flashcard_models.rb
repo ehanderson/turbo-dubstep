@@ -72,32 +72,4 @@ class Flashcard
   def is_correct?(guess)
     @correct = (answer == guess)
   end
-
 end
-
-
-
-  #fuckshitup
-stack = Stack.new
-# binding.pry
-stack.shuffle!
-checked_card = stack.serve
-puts checked_card.answer
-puts stack.flashcards[0].answer
-puts stack.flashcards[-1].answer
-puts stack.flashcards[-2].answer
-puts stack.flashcards[-1].answer
-card = Flashcard.new("yes?", "no")
-card.is_correct?("nope")
-puts card.correct
-card = Flashcard.new("cat","dog")
-card2 = Flashcard.new("cat","cat")
-bad_card = Flashcard.new("moose","cars")
-card.is_correct?("dog")
-stack.do_something_with_this_card(card)
-puts stack.correct_cards[0].answer
-card2.is_correct?("dog")
-stack.do_something_with_this_card(card2)
-puts stack.flashcards[-1].answer
-stack.do_something_with_this_card(bad_card)
-p stack.final_results

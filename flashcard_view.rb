@@ -15,6 +15,12 @@ class FlashcardView
     outcome ? correct_guess : incorrect_guess
   end
 
+  def the_end(result_ratio)
+    puts "You answered #{result_ratio[0]} correct.\nYou answered #{result_ratio[1]} incorrectly!!"
+    puts "I'd totally go out with you!"
+    puts "Yes. But no. But yes." 
+  end
+
   private
 
   def correct_guess
@@ -28,5 +34,4 @@ class FlashcardView
     puts "Wrong, loser! Next card..."
     puts
   end
-
 end

@@ -23,21 +23,6 @@ while deck.cards_left?
   display.result(outcome)
   deck.do_something_with_this_card(card)
 end
-deck.final_results
+final_results = deck.final_results
+display.the_end(final_results)
 
-#-------------MISC. DRIVER CODE----------------------
-
-#   def determine correct?
-# =>   return true if answer == user_answer
-# =>   return false if answer != user_answer
-# =>   (next_card)
-#--------------------------------
-#     until answer == user_answer
-#       puts "Nope. Try again:"
-#     else
-#       puts "Correct! Next card:"
-#   end
-
-#  def next_card
-#
-#  end
