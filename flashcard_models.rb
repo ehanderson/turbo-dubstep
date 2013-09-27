@@ -35,14 +35,15 @@ class Stack
 end
 
 class Flashcard
-  attr_reader :answer, :question
+  attr_reader :answer, :question, :correct
   def initialize(question, answer)
-    @answer = answer
     @question = question
+    @answer = answer
+    @correct = nil
   end
 
   def is_correct?(guess)
-    answer == guess
+    @correct = (answer == guess)
   end
 
 end
@@ -60,4 +61,6 @@ stack = Stack.new
 # stack.put_on_bottom(checked_card)
 # puts stack.flashcards[-2].answer
 # puts stack.flashcards[-1].answer
-
+# card = Flashcard.new("yes?", "no")
+# card.is_correct?("nope")
+# puts card.correct
