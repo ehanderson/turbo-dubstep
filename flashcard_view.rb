@@ -6,8 +6,17 @@ class FlashcardView
     puts card.question
   end
 
+  def show_answer(card)
+    puts card.answer
+  end
+
+  def prompt_for_answer
+    puts "....whats the answer?"
+    print ">"
+  end
+
   def user_answer
-    guess = gets.chomp
+    guess = gets
   end
 
   def correct_guess
