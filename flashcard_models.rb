@@ -3,10 +3,11 @@ require 'pry'
 
 
 class Stack
-  attr_reader :flashcards, :completed_card
+  attr_reader :flashcards, :correct_cards, :incorrect_cards
   def initialize
     @flashcards = []
-    @completed_card = []
+    @correct_cards = []
+    @incorrect_cards = []
     add_cards
   end
 
@@ -23,7 +24,7 @@ class Stack
   end
 
   def serve
-    flashcards.shift
+    flashcards.shift if cards_left?
   end
   
   def shuffle!
@@ -32,13 +33,17 @@ class Stack
 
   def do_something_with_this_card(card)
     if card.correct
-      @completed_card << card
+      @correct_cards << card
     elsif card.correct == false
-      put_on_bottom(card)
+      @incorrect_cards << card
+      # put_on_bottom(card)
     else 
-      raise "How did this get here?"
+      puts "How did this get here?"
+        put_on_bottom(card)
     end
   end
+
+private
 
   def put_on_bottom(flashcard)
     @flashcards << flashcard
@@ -72,7 +77,7 @@ stack = Stack.new
 # stack.put_on_bottom(checked_card)
 # puts stack.flashcards[-2].answer
 # puts stack.flashcards[-1].answer
-# card = Flashcard.new("yes?", "no")
+card = Flashcard.new("yes?", "no")
 # card.is_correct?("nope")
 # puts card.correct
 # card = Flashcard.new("cat","dog")
@@ -80,9 +85,8 @@ stack = Stack.new
 # bad_card = Flashcard.new("moose","cars")
 # card.is_correct?("dog")
 # stack.do_something_with_this_card(card)
-# puts stack.completed_card[0].answer
+# puts stack.correct_cards[0].answer
 # card2.is_correct?("dog")
 # stack.do_something_with_this_card(card2)
 # puts stack.flashcards[-1].answer
 # stack.do_something_with_this_card(bad_card)
-
