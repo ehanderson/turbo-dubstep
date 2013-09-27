@@ -8,10 +8,29 @@ class FlashcardController
     @stack = Stack.new
     @view = FlashcardView.new
   end
+end
+
+game = FlashcardController.new
+deck = game.stack
+display = game.view
+
+card = deck.serve
+display.show_question(card)
+user_answer = display.user_answer
+outcome = card.is_correct?(user_answer)
+display.result(outcome)
+
+puts deck.do_something_with_this_card
 
 
 
 
+
+
+
+
+
+#-------------MISC. DRIVER CODE----------------------
 
 #   def determine correct?
 # =>   return true if answer == user_answer
@@ -27,15 +46,3 @@ class FlashcardController
 #  def next_card
 #
 #  end
-
-end
-
-game = FlashcardController.new
-deck = game.stack
-display = game.view
-
-card = deck.serve
-display.show_question(card)
-user_answer = display.user_answer
-outcome = card.is_correct?(user_answer)
-display.result(outcome)

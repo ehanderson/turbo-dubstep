@@ -3,7 +3,7 @@
 class FlashcardView
 
   def show_question(card)
-    puts "QUESTION:" + card.question
+    puts "QUESTION: " + card.question
   end
 
   def user_answer
@@ -24,6 +24,5 @@ end
   def incorrect_guess
     puts "Wrong, loser! Next card..."
   end
-
 
 end
