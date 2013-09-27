@@ -26,12 +26,12 @@ class Stack
   end
   
   def shuffle!
-    flashcards = flashcards.shuffle
+    @flashcards = flashcards.shuffle
   end
 
-  # something.each do |x|
-  #   @flashcards << Flashcard.new(x)
-  # end
+  def put_on_bottom(flashcard)
+    @flashcards << flashcard
+  end
 end
 
 class Flashcard
@@ -40,17 +40,19 @@ class Flashcard
     @answer = answer
     @question = question
   end
-
-  # def answer.to_s
-  #   "#{answer}"
-  # end
-
-  # def question.to_s
-  #   "#{question}"
-  # end
 end
 
 
 
   #fuckshitup
 stack = Stack.new
+# binding.pry
+# stack.shuffle!
+# checked_card = stack.serve
+# puts checked_card.answer
+# puts stack.flashcards[0].answer
+# puts stack.flashcards[-1].answer
+# stack.put_on_bottom(checked_card)
+# puts stack.flashcards[-2].answer
+# puts stack.flashcards[-1].answer
+
