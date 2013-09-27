@@ -11,9 +11,9 @@ class FlashcardView
     gets
   end
 
-def result(outcome)
-  outcome ? correct_guess : incorrect_guess
-end
+  def result(outcome)
+    outcome ? correct_guess : incorrect_guess
+  end
 
   private
 

@@ -14,14 +14,6 @@ game = FlashcardController.new
 deck = game.stack
 display = game.view
 
-card = deck.serve
-display.show_question(card)
-user_answer = display.user_answer
-outcome = card.is_correct?(user_answer)
-display.result(outcome)
-deck.do_something_with_this_card(card)
-
-
 
 
 #-------------MISC. DRIVER CODE----------------------
