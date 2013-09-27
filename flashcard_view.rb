@@ -2,8 +2,8 @@
 
 class FlashcardView
 
-  def show_question
-    puts question
+  def show_question(card)
+    puts card.question
   end
 
   def user_answer
