@@ -3,12 +3,19 @@
 class FlashcardView
 
   def show_question(card)
-    puts card.question
+    puts "QUESTION:" + card.question
   end
 
   def user_answer
+    print "ANSWER: >"
     gets
   end
+
+def result(outcome)
+  outcome ? correct_guess : incorrect_guess
+end
+
+  private
 
   def correct_guess
     puts "Correct! Next card..."

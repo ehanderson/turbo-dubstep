@@ -31,8 +31,11 @@ class FlashcardController
 end
 
 game = FlashcardController.new
+deck = game.stack
+display = game.view
 
-card = game.stack.serve
-game.view.show_question(card)
-user_answer = game.view.user_answer
-card.is_correct?(user_answer)
+card = deck.serve
+display.show_question(card)
+user_answer = display.user_answer
+outcome = card.is_correct?(user_answer)
+display.result(outcome)
