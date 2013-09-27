@@ -14,7 +14,7 @@ class Stack
   end
 
   def add_cards
-    @flashcards = Flashcard.new("Feline", "Stupid name for cat")
+    @flashcards << Flashcard.new("Feline", "Stupid name for cat")
   end
 end
 
