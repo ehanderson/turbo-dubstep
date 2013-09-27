@@ -14,7 +14,16 @@ game = FlashcardController.new
 deck = game.stack
 display = game.view
 
-
+deck.shuffle!
+while deck.cards_left?
+  card = deck.serve
+  display.show_question(card)
+  guess = display.user_answer
+  outcome = card.is_correct?(guess)
+  display.result(outcome)
+  deck.do_something_with_this_card(card)
+end
+deck.final_results
 
 #-------------MISC. DRIVER CODE----------------------
 

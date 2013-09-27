@@ -18,11 +18,15 @@ class FlashcardView
   private
 
   def correct_guess
-    puts "Correct! Next card..."
+    puts
+    puts "Nice guess there, boy-o! Next card..."
+    puts
   end
 
   def incorrect_guess
+    puts
     puts "Wrong, loser! Next card..."
+    puts
   end
 
 end

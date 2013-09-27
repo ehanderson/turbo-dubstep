@@ -27,7 +27,7 @@ class Stack
     flashcards.shift if cards_left?
   end
   
-  xdef shuffle!
+  def shuffle!
     @flashcards = flashcards.shuffle
   end
 
@@ -53,7 +53,7 @@ class Stack
     @flashcards.any?
   end
 
-private
+  private
 
   def put_on_bottom(flashcard)
     @flashcards << flashcard
