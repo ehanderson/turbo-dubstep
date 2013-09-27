@@ -27,7 +27,7 @@ class Stack
     flashcards.shift if cards_left?
   end
   
-  def shuffle!
+  xdef shuffle!
     @flashcards = flashcards.shuffle
   end
 
@@ -43,11 +43,22 @@ class Stack
     end
   end
 
+  def final_results
+    right = @correct_cards.length
+    wrong = @incorrect_cards.length
+    [right, wrong]
+  end
+
+  def cards_left?
+    @flashcards.any?
+  end
+
 private
 
   def put_on_bottom(flashcard)
     @flashcards << flashcard
   end
+
 end
 
 class Flashcard
@@ -69,24 +80,24 @@ end
   #fuckshitup
 stack = Stack.new
 # binding.pry
-# stack.shuffle!
-# checked_card = stack.serve
-# puts checked_card.answer
-# puts stack.flashcards[0].answer
-# puts stack.flashcards[-1].answer
-# stack.put_on_bottom(checked_card)
-# puts stack.flashcards[-2].answer
-# puts stack.flashcards[-1].answer
+stack.shuffle!
+checked_card = stack.serve
+puts checked_card.answer
+puts stack.flashcards[0].answer
+puts stack.flashcards[-1].answer
+puts stack.flashcards[-2].answer
+puts stack.flashcards[-1].answer
 card = Flashcard.new("yes?", "no")
-# card.is_correct?("nope")
-# puts card.correct
-# card = Flashcard.new("cat","dog")
-# card2 = Flashcard.new("cat","cat")
-# bad_card = Flashcard.new("moose","cars")
-# card.is_correct?("dog")
-# stack.do_something_with_this_card(card)
-# puts stack.correct_cards[0].answer
-# card2.is_correct?("dog")
-# stack.do_something_with_this_card(card2)
-# puts stack.flashcards[-1].answer
-# stack.do_something_with_this_card(bad_card)
+card.is_correct?("nope")
+puts card.correct
+card = Flashcard.new("cat","dog")
+card2 = Flashcard.new("cat","cat")
+bad_card = Flashcard.new("moose","cars")
+card.is_correct?("dog")
+stack.do_something_with_this_card(card)
+puts stack.correct_cards[0].answer
+card2.is_correct?("dog")
+stack.do_something_with_this_card(card2)
+puts stack.flashcards[-1].answer
+stack.do_something_with_this_card(bad_card)
+p stack.final_results
