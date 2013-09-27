@@ -3,6 +3,7 @@ class Flashcard
   def initialize(answer, question)
     @answer = answer
     @question = question
+  end
 end
 
 
